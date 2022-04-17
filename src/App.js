@@ -1,15 +1,15 @@
 // import logo from './logo.svg';
 import React,{useState} from 'react';
 // import './App.css';
-import About from './components/About';
+// import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route
+// } from "react-router-dom";
 
 
 
@@ -59,22 +59,23 @@ function App() {
   
   return (
     <>
-      <Router>
+      {/* <Router> */}
       <Navbar title = "Save Soil" mode = {mode} toggleMode = {toggleMode}  aboutText="Inner-Enginnering"/>      
       <Alert alert={alert}/>
       <div className="container center my-3 ">
-      <Routes>
+      <TextForm showAlert={showAlert} heading = "Kindly say something about soil" mode={mode}/>
+      {/* <Routes> */}
         {/* We are using exact path because exact file name will be matched, else it will consider partial matching and render anything matching:
         example : 
         /About - renders Text Component
         /About/Images - renders Image Component
         now if "exact path" is not used, even if we call /About/Images, it renders Text COmponent in About*/}
-        <Route exact path="/about" element={<About/>} />
-        <Route exact path="/" element={<TextForm showAlert={showAlert} heading = "Kindly say something about soil" mode={mode}/>}/>
-      </Routes>
+        {/* <Route exact path="/about" element={<About/>} /> */}
+        {/* <Route exact path="/" element={<TextForm showAlert={showAlert} heading = "Kindly say something about soil" mode={mode}/>}/> */}
+      {/* </Routes> */}
        
       </div>
-      </Router>
+      {/* </Router> */}
       {/* <Navbar/> */}
    </>
   );
